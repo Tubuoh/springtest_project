@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: spring-test-app
+
+  labels:
+
+    app: spring-test--app
+
+spec:
+
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+
+      app: spring-test-app
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: spring-test-app
+
+    spec:
+
+      containers:
+
+      - name: spring-test-app
+
+        image: rahulgangwar8954/spring-test-image
+
+        ports:
+
+        - containerPort: 8080
+
